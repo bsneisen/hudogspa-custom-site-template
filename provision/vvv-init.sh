@@ -54,6 +54,9 @@ fi
 
 ## HUDOGSPA CUSTOM CODE - START ##
 
+# Prepare for topdown's custom dashboard 
+echo ${DOMAIN} > ${VVV_PATH_TO_SITE}/vvv-hosts
+
 # Language settings
 wp language core install --allow-root --quiet nb_NO
 wp language core activate --allow-root --quiet nb_NO
