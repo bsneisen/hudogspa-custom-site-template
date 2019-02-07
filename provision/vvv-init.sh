@@ -52,6 +52,14 @@ else
   noroot wp core update --version="${WP_VERSION}"
 fi
 
+## HUDOGSPA CUSTOM CODE - START ##
+
+# Language settings
+wp language core install --allow-root --quiet nb_NO
+wp language core activate --allow-root --quiet nb_NO
+
+## HUDOGSPA CUSTOM CODE - END ##
+
 cp -f "${VVV_PATH_TO_SITE}/provision/vvv-nginx.conf.tmpl" "${VVV_PATH_TO_SITE}/provision/vvv-nginx.conf"
 
 if [ -n "$(type -t is_utility_installed)" ] && [ "$(type -t is_utility_installed)" = function ] && `is_utility_installed core tls-ca`; then
